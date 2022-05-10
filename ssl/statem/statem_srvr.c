@@ -369,7 +369,7 @@ int send_certificate_request(SSL *s)
            /* don't request cert unless asked for it: */
            s->verify_mode & SSL_VERIFY_PEER
 
-           && (SSL_IS_TLS13(s) || SSL_VERIFY_PEER_ONLY_TLS13)
+           && (SSL_IS_TLS13(s) || !(s->verify_mode & SSL_VERIFY_PEER_ONLY_TLS13))
            /*
             * don't request if post-handshake-only unless doing
             * post-handshake in TLSv1.3:
