@@ -1101,6 +1101,7 @@ size_t SSL_get_peer_finished(const SSL *s, void *buf, size_t count);
 # define SSL_VERIFY_FAIL_IF_NO_PEER_CERT 0x02
 # define SSL_VERIFY_CLIENT_ONCE          0x04
 # define SSL_VERIFY_POST_HANDSHAKE       0x08
+# define SSL_VERIFY_PEER_ONLY_TLS13      0x10
 
 # if OPENSSL_API_COMPAT < 0x10100000L
 #  define OpenSSL_add_ssl_algorithms()   SSL_library_init()
